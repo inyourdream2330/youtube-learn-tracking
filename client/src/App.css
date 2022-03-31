@@ -1,0 +1,179 @@
+.landing {
+  position: relative;
+  background: url("./assets/landing.jpg") no-repeat center center/cover;
+  height: 100vh;
+}
+
+.dark-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  height: 100%;
+}
+
+.landing-inner {
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.landing-inner form {
+  width: 30%;
+}
+@media only screen and (max-width: 768px) {
+  .landing-inner form {
+    width: 60%;
+  }
+}
+
+.landing-inner h1,
+.landing-inner h4,
+.landing-inner p {
+  color: white;
+}
+
+.spinner-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -moz-transform: translateX(-50%) translateY(-50%);
+  -webkit-transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-50%) translateY(-50%);
+}
+
+/* Post button */
+.post-button {
+  padding-top: 0;
+  background: transparent;
+  border: none;
+}
+
+.post-button:hover {
+  background: transparent;
+}
+
+a.post-button.btn:focus,
+a.post-button.btn:active {
+  outline: none;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+button.post-button.btn:focus,
+button.post-button.btn:active {
+  outline: none;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Floating add button */
+.btn-floating {
+  position: fixed;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  background: transparent;
+  border: none;
+}
+
+.btn-floating:hover {
+  background: transparent;
+}
+
+.btn-floating:focus,
+.btn-floating:active {
+  outline: none;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+}
+
+/* Add new post tooltip */
+.tooltip {
+  background: transparent;
+}
+/* boostrap 4 tooltip */
+.tooltip .arrow::before {
+  border-left-color: #78c2ad;
+}
+/* boostrap 5 tooltip */
+.tooltip .tooltip-arrow::before {
+  border-left-color: #78c2ad;
+}
+
+.tooltip-inner {
+  background: #78c2ad;
+}
+
+/* Post border thicker */
+.border-success,
+.border-warning,
+.border-danger {
+  border-width: 2px;
+}
+
+/* Post title */
+.post-title {
+  margin-bottom: 0.5rem;
+}
+
+/* Logo size*/
+.app-logo-32 {
+  height: 32px;
+  width: 32px;
+}
+.app-logo-24 {
+  height: 24px;
+  width: 24px;
+}
+.app-logo-60 {
+  height: 60px;
+  width: 60px;
+}
+
+.app-toast {
+  position: fixed;
+  top: 20%;
+  right: 10px;
+}
+
+/* Custom modal */
+.bg-light-off {
+  background-color: #212529 !important;
+  border: #212529;
+}
+
+.h-13 {
+  height: 13rem;
+}
+
+.mw-post {
+  min-width: 290px;
+}
+
+.ov-el {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.post-layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+}
+
+.n-resize {
+  resize: none;
+}
+
+.text-p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* number of lines to show */
+          line-clamp: 3; 
+  -webkit-box-orient: vertical;
+}

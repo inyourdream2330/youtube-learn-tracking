@@ -1,0 +1,84 @@
+import {
+  POSTS_LOADED_FAIL,
+  POSTS_LOADED_SUCCESS,
+  ADD_POST,
+  DELETE_POST,
+  UPDATE_POST,
+  GET_POST_BY_ID,
+  POST_VIDEO,
+  CLOSE_POST_VIDEO,
+  VIDEO_LIGHT_OFF,
+  VIDEO_LIGHT_ON,
+} from "../contexts/constants";
+export const postReducer = (state, action) => {
+  const { type, payload } = action;
+  switch (type) {
+    case POSTS_LOADED_SUCCESS:
+      return {
+        ...state,
+        posts: payload,
+        postsLoading: false,
+      };
+
+    case POSTS_LOADED_FAIL:
+      return {
+        ...state,
+        posts: [],
+        postsLoading: false,
+      };
+
+    case ADD_POST:
+      return {
+        ...state,
+        posts: [...state.posts, payload],
+      };
+
+    case DELETE_POST:
+      return {
+        ...state,
+        posts: state.posts.filter((post) => post._id !== payload),
+      };
+
+    case UPDATE_POST:
+      const newPosts = state.posts.map((post) =>
+        post._id === payload._id ? payload : post
+      );
+
+      return {
+        ...state,
+        posts: newPosts,
+      };
+
+    case GET_POST_BY_ID:
+      return {
+        ...state,
+        post: payload,
+      };
+
+    case POST_VIDEO:
+      return {
+        ...state,
+        post: payload,
+        isPostVideo: true,
+      };
+
+    case CLOSE_POST_VIDEO:
+      return {
+        ...state,
+        isPostVideo: false,
+      };
+    case VIDEO_LIGHT_ON:
+      return {
+        ...state,
+        videoLight: true,
+      };
+    case VIDEO_LIGHT_OFF:
+      return {
+        ...state,
+        videoLight: false,
+      };
+
+    default:
+      return state;
+  }
+};
